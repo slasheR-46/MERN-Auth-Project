@@ -1,8 +1,20 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
+
 export default function App() {
   return (
-    <>
-      <h1 className='text-2xl text-red-500 font-bold text-center mt-4'>MERN, AUTH PROJECT!</h1>
-      <p className='text-center'>Energizado por Vite + React + Tailwind CSS app.</p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/About' element={<About />} />
+        <Route path='/SignIn' element={<SignIn />} />
+        <Route path='/SignUp' element={<SignUp />} />
+        <Route path='/Profile' element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
